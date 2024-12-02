@@ -1,0 +1,10 @@
+{% if footer_menu %}
+	<ul class="footer-menu">
+	{% for item in items %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "footer-menu.twig" with {'items': item.children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

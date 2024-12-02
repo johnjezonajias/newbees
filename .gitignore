@@ -46,3 +46,10 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+# Other dependencies
+/.sass-cache/
+/node_modules/
+/vendor/
+/vendor/composer/
+/package-lock.json
