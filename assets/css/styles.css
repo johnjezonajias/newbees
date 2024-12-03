@@ -207,7 +207,8 @@ p {
   margin-bottom: 1rem; }
 
 header {
-  background-color: #cdcdcd; }
+  background-color: #cdcdcd;
+  text-align: center; }
 
 .container {
   max-width: 1200px;
