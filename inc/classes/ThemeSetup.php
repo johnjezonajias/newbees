@@ -26,7 +26,7 @@ class ThemeSetup {
      */
     public function enqueue_assets() {
         // Styles.
-        wp_enqueue_style( 'newbees-style', NEWBEES_URL . 'assets/css/styles.css', [], NEWBEES_VERSION );
+        wp_enqueue_style( 'newbees-style', NEWBEES_URL . '/dist/css/style.css', [], NEWBEES_VERSION );
 
         // Scripts.
         wp_enqueue_script( 'newbees-scripts', NEWBEES_URL . 'assets/js/scripts.js', [ 'jquery' ], NEWBEES_VERSION, true );
