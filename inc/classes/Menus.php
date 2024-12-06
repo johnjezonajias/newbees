@@ -55,6 +55,7 @@ class Menus {
 
             // Retrieve the menu and add it to the context.
             $menu = Timber::get_menu( $location );
+
             $context[ $location ] = $menu;
         }
 

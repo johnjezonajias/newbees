@@ -1,0 +1,11 @@
+<li class="{{ item.classes | join(' ') }}">
+    <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+
+    {% if item.children|length %}
+        <ul class="sub-menu">
+            {% for child in item.children %}
+                {% include 'partial/menu-item.twig' with { item: child } %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
