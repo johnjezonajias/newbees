@@ -1,7 +1,7 @@
 <footer id="colophon">
     <div class="container mx-auto px-4">
         <ul id="footer-menu" class="menu" role="navigation">
-            {% include "parts/footer-menu.twig" with {'items': footer_menu.get_items} %}
+            {% include "partial/footer-menu.twig" with {'items': footer_menu.get_items} %}
         </ul>
         Copyright {{"now"|date('Y')}}
     </div>

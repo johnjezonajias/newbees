@@ -11,6 +11,7 @@ class ThemeSetup {
      */
     public function init() {
         add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
+        add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
     }
 
