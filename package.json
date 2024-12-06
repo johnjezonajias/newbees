@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "npx tailwindcss -i ./assets/css/tailwind.css -o ./dist/css/style.css --watch",
-    "build": "NODE_ENV=production npx tailwindcss -i ./assets/css/tailwind.css -o ./dist/css/style.css --minify"
+    "start": "concurrently \"sass --watch assets/scss/styles.scss:assets/css/styles.css\" \"npx tailwindcss -i ./assets/css/tailwind.css -o ./dist/css/style.css --watch\"",
+    "build": "sass assets/scss/styles.scss assets/css/styles.css && NODE_ENV=production npx tailwindcss -i ./assets/css/tailwind.css -o ./dist/css/style.css --minify"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,8 @@
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
-    "postcss-import": "^16.1.0"
+    "concurrently": "^9.1.0",
+    "postcss-import": "^16.1.0",
+    "sass": "^1.82.0"
   }
 }

@@ -1,9 +1,14 @@
 <header id="masthead" class="header border-b-[#ececec] border-b-[1px] py-5">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between gap-x-16">
-            <h1 class="logo" role="banner">
-                <a class="logo__link" href="{{site.url}}" rel="home">{{site.name}}</a>
-            </h1>
+            <div class="site-branding">
+                {% if function('has_custom_logo') %}
+                    {{ function('get_custom_logo')|raw }}
+                {% else %}
+                    <a class="logo__link" href="{{ site.url }}" rel="home" aria-label="Go to {{ site.name }} homepage">{{ site.name }}</a>
+                {% endif %}
+            </div>
+
             {% include "partial/primary-menu.twig" with {'items': primary_menu.get_items} %}
         </div>
     </div>

@@ -1,0 +1,107 @@
+body {
+  color: #222222;
+}
+
+.logo {
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 10px 15px;
+  position: relative;
+  text-transform: lowercase;
+  z-index: 99;
+}
+.logo::before, .logo::after {
+  background-color: #ededed;
+  display: inline-block;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.logo::before {
+  border-bottom-right-radius: 10px;
+  left: 0;
+  width: 98px;
+  z-index: 1;
+}
+.logo::after {
+  border-top-left-radius: 10px;
+  right: 0;
+  width: 35px;
+  z-index: 2;
+}
+.logo .logo__link {
+  position: relative;
+  z-index: 3;
+}
+
+.site-branding {
+  max-width: 200px;
+}
+
+.main-navigation .menu {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.main-navigation .menu > li {
+  position: relative;
+}
+.main-navigation .menu > li:hover > .sub-menu {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0s;
+}
+.main-navigation .menu > li > a {
+  color: #777777;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
+}
+.main-navigation .menu > li:hover > a {
+  color: #222222;
+}
+.main-navigation .menu > li.current-menu-item > a, .main-navigation .menu > li.current-menu-parent > a {
+  color: #f1bd09;
+}
+.main-navigation .menu .sub-menu {
+  background-color: #ffffff;
+  border-top: 3px solid #f1bd09;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  left: 0;
+  min-width: 260px;
+  opacity: 0;
+  padding: 0.5em 1em 1em;
+  position: absolute;
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.15s;
+}
+.main-navigation .menu .sub-menu li {
+  padding-top: 10px;
+}
+.main-navigation .menu .sub-menu li + li {
+  border-top: 1px solid #ededed;
+  margin-top: 10px;
+}
+.main-navigation .menu .sub-menu li > a {
+  font-size: 0.9375rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.main-navigation .menu .sub-menu li > a:hover {
+  color: #777777;
+}
+.main-navigation .menu .sub-menu li.current-menu-item a {
+  color: #777777;
+}
+
+/*# sourceMappingURL=styles.css.map */
