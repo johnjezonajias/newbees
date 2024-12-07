@@ -1,7 +1,7 @@
 {% extends "parts/base.twig" %}
 
 {% block content %}
-	<h2>{{ foo }}</h2>
+	<h2 class="text-h2">{{ foo }}</h2>
 	<p>{{ qux }}</p>
 	{% for post in posts %}
 		{% include ['parts/tease-'~post.post_type~'.twig', 'parts/tease.twig'] %}

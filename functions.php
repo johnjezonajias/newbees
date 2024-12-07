@@ -30,6 +30,7 @@ if ( file_exists( NEWBEES_PATH . '/vendor/autoload.php' ) ) {
 $theme_includes = [
     'src/StarterSite.php',
     'inc/classes/Menus.php',
+    'inc/classes/Widgets.php',
     'inc/classes/ThemeSetup.php',
     'inc/acf/Shared.php',
     'inc/acf/ContactPage.php',
@@ -61,3 +62,4 @@ add_action( 'acf/init', [ACFCore::class, 'registerFieldGroups'] );
 new StarterSite();
 ( new Newbees\classes\ThemeSetup() )->init();
 new Newbees\classes\Menus();
+new \Newbees\classes\Widgets();
