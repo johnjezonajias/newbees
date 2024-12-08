@@ -1,0 +1,56 @@
+.main-sidebar {
+    max-height: 100%;
+    max-height: calc(-50px + 100vh);
+    overflow-y: initial;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 6em;
+
+    .widget {
+        padding-left: 1em;
+        padding-right: 1em;
+
+        & + .widget {
+            margin-top: 3em;
+        }
+    }
+
+    .wp-block-heading {
+        color: #777777;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        position: relative;
+    
+        &::after {
+            background-color: #f1bd09;
+            bottom: 0;
+            content: '';
+            display: inline-block;
+            height: 3px;
+            left: 0;
+            position: absolute;
+            width: 45px;
+        }
+    }
+
+    .wp-block-latest-posts {
+        font-weight: 300;
+
+        &__list {
+
+            li + li {
+                margin-top: 10px;
+            }
+
+            a {
+
+                &:hover {
+                    color: #777777;
+                }
+            }
+        }
+    }
+}

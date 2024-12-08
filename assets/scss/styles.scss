@@ -3,6 +3,9 @@
 @import 'typography/heading';
 
 /* Custom/override styles */
+@import 'parts/header';
 @import 'parts/logo';
 @import 'parts/navigation';
+@import 'parts/sidebar';
+@import 'parts/search-form';
 @import 'parts/footer';

@@ -1,1 +1,7 @@
-Sidebar in Timber. Add HTML to your hearts content.
+{% if primary_sidebar|length > 0 %}
+    <aside id="secondary" class="w-full md:w-1/3 xl:w-[30%] pl-0 mt-8 mb-16 md:pl-8 xl:pl-14 md:mt-24">
+        <div class="main-sidebar">
+            {{ primary_sidebar|raw }}
+        </di>
+    </aside>
+{% endif %}

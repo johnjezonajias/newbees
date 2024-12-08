@@ -1,9 +1,60 @@
 {% extends "parts/tease.twig" %}
 
 {% block content %}
-	<h2 class="text-h2"><a href="{{post.link}}">{{ post.title }}</a></h2>
-		<p>{{ post.excerpt({ words:5, read_more: "Keep reading" }) }}</p>
+	<div class="flex flex-col mb-16 md:flex-row items-start space-y-4 md:space-y-0 md:space-x-4">
 		{% if post.thumbnail.src %}
-			<img src="{{ post.thumbnail.src }}" />
+			<div class="w-full md:w-1/3">
+				<a href="{{ post.link }}" aria-label="Read more about {{ post.title }}">
+					<img 
+						src="{{ post.thumbnail.src }}" 
+						alt="{{ post.title }}" 
+						class="w-full h-auto object-cover" 
+						loading="lazy" 
+						role="img" 
+						aria-label="{{ post.title }}">
+				</a>
+			</div>
+		{% else %}
+			<div 
+				class="w-full md:w-1/3 bg-[#f3f4f6] flex items-center justify-center h-48" 
+				role="img" 
+				aria-label="Placeholder image">
+				<span class="text-gray-500 text-sm">No Image Available</span>
+			</div>
 		{% endif %}
+		<div class="w-full md:w-2/3 flex flex-col space-y-2">
+			<h2 class="text-h2 hover:text-[#222222]">
+				<a href="{{ post.link }}" aria-label="Read more about {{ post.title }}">
+					{{ post.title }}
+				</a>
+			</h2>
+			<div class="text-[#f1bd09] text-sm">
+				{% set meta_items = [] %}
+				<!-- Categories -->
+				{% if post.categories %}
+					{% for category in post.categories %}
+						{% set _category = '<a href="' ~ category.link ~ '" class="text-[#f1bd09] hover:text-[#777777]">' ~ category.name ~ '</a>' %}
+						{% set meta_items = meta_items|merge([_category]) %}
+					{% endfor %}
+				{% endif %}
+				<!-- Tags -->
+				{% if post.tags %}
+					{% for tag in post.tags %}
+						{% set _tag = '<a href="' ~ tag.link ~ '" class="text-[#f1bd09] hover:text-[#777777]">' ~ tag.name ~ '</a>' %}
+						{% set meta_items = meta_items|merge([_tag]) %}
+					{% endfor %}
+				{% endif %}
+				<!-- Join Categories and Tags -->
+				{{ meta_items|join(', ') }}
+				<!-- Date -->
+				{% if post.date %}
+					{% if meta_items|length > 0 %} • {% endif %}
+					<time datetime="{{ post.date|date('Y-m-d') }}">
+						{{ post.date|date('F j, Y') }}
+					</time>
+				{% endif %}
+			</div>
+			<p>{{ post.excerpt({ words: 15, read_more: " read more" }) }}</p>
+		</div>
+	</div>
 {% endblock %}

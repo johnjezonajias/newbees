@@ -1,15 +1,38 @@
-<header id="masthead" class="header border-b-[#ececec] border-b-[1px] py-5">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between gap-x-16">
-            <div class="site-branding">
-                {% if function('has_custom_logo') %}
-                    {{ function('get_custom_logo')|raw }}
-                {% else %}
-                    <a class="logo__link" href="{{ site.url }}" rel="home" aria-label="Go to {{ site.name }} homepage">{{ site.name }}</a>
-                {% endif %}
-            </div>
+<header id="masthead" class="header bg-[#ececec] border-b-0 py-5 md:bg-white md:border-b-[1px] md:border-b-[#ececec]">
+    <div class="header__desktop">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between gap-x-16">
+                <div class="site-branding">
+                    {% if function('has_custom_logo') %}
+                        {{ function('get_custom_logo')|raw }}
+                    {% else %}
+                        <a class="logo__link" href="{{ site.url }}" rel="home" aria-label="Go to {{ site.name }} homepage">{{ site.name }}</a>
+                    {% endif %}
+                </div>
 
-            {% include "partial/primary-menu.twig" with {'items': primary_menu.get_items} %}
+                {% include "partial/primary-menu.twig" with {'items': primary_menu.get_items} %}
+            </div>
+        </div>
+    </div>
+    <div class="header__mobile">
+        <div class="container mx-auto px-4">
+            <div class="header__mobile--top flex items-center justify-between gap-x-16">
+                <div class="site-branding">
+                    {% if function('has_custom_logo') %}
+                        {{ function('get_custom_logo')|raw }}
+                    {% else %}
+                        <a class="logo__link" href="{{ site.url }}" rel="home" aria-label="Go to {{ site.name }} homepage">{{ site.name }}</a>
+                    {% endif %}
+                </div>
+
+                <button id="mobile-menu-toggle" class="block text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                </button>
+            </div>
+            
+            {% include "partial/mobile-menu.twig" with {'items': primary_menu.get_items} %}
         </div>
     </div>
 </header>

@@ -1,3 +1,34 @@
 body {
     color: #222222;
 }
+
+.widget-title {
+    color: #777777;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    position: relative;
+
+    &::after {
+        background-color: #f1bd09;
+        bottom: 0;
+        content: '';
+        display: inline-block;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 45px;
+    }
+}
+
+.read-more {
+    color: #777777;
+    font-size: 0.9375rem;
+
+    &:hover {
+        color: #222222;
+        text-decoration: underline;
+    }
+}

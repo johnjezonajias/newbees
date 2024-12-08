@@ -1,31 +1,49 @@
 footer {
     font-size: 0.9375rem;
 
-    .widget-title {
-        color: #777777;
-        font-size: 1.125rem;
-        font-weight: 600;
-        line-height: 1.5;
-        margin-bottom: 15px;
-        padding-bottom: 5px;
-        position: relative;
-
-        &::after {
-            background-color: #f1bd09;
-            bottom: 0;
-            content: '';
-            display: inline-block;
-            height: 3px;
-            left: 0;
-            position: absolute;
-            width: 45px;
-        }
-    }
-
     ul {
 
         li + li {
             margin-top: 5px;
         }
+    }
+
+    .mailpoet_form {
+
+        .mailpoet_text {
+            border-color: #c1c1c1;
+            font-size: 0.9375rem;
+            height: 42px;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .mailpoet_submit {
+            background-color: #222222;
+            color: #f3f4f6;
+            font-size: 0.875rem;
+            height: 42px;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+
+            &:hover {
+                background-color: #f1bd09;
+                color: #222222;
+                cursor: pointer;
+            }
+        }
+
+        .mailpoet_form_column:not(:first-child) {
+            margin-left: 5px !important;
+        }
+    }
+}
+
+#footer-col-1 {
+    max-width: 450px;
+    width: 100%;
+
+    .widget + .widget {
+        margin-top: 3em;
     }
 }

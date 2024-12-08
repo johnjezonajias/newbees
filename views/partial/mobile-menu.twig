@@ -1,0 +1,30 @@
+{% if primary_menu %}
+    <nav id="nav-mobile" class="mobile-navigation hidden" role="navigation">
+        <div class="container mx-auto px-4">
+            <ul class="menu flex flex-col flex-wrap">
+                {% for item in primary_menu.items %}
+                    <li class="{{ item.classes | join(' ') }}">
+                        <div class="flex justify-between items-center">
+                            <a target="{{ item.target }}" href="{{ item.link }}" class="flex-1">{{ item.title }}</a>
+                            {% if item.children|length %}
+                                <button class="submenu-toggle" aria-expanded="false" aria-label="Toggle Sub-menu">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                            {% endif %}
+                        </div>
+
+                        {% if item.children|length %}
+                            <ul class="sub-menu hidden">
+                                {% for child in item.children %}
+                                    {% include 'partial/menu-item.twig' with { item: child } %}
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav><!-- #nav -->
+{% endif %}
