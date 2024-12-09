@@ -32,9 +32,11 @@ $theme_includes = [
     'inc/classes/Menus.php',
     'inc/classes/Widgets.php',
     'inc/classes/ThemeSetup.php',
+    'inc/acf/ACFCore.php',
+    'inc/acf/ThemeOptions.php',
     'inc/acf/Shared.php',
+    'inc/acf/SocialIcons.php',
     'inc/acf/ContactPage.php',
-    'inc/acf/ACFCore.php'
 ];
 
 // Dynamically include each modular file if it exists.
@@ -56,10 +58,11 @@ Timber\Timber::init();
 Timber::$dirname = [ 'templates', 'views' ];
 
 // Initialize core theme classes.
-use Newbees\acf\ACFCore;
-add_action( 'acf/init', [ACFCore::class, 'registerFieldGroups'] );
+//use Newbees\acf\ACFCore;
+//add_action( 'acf/init', [ACFCore::class, 'registerFieldGroups'] );
 
 new StarterSite();
 ( new Newbees\classes\ThemeSetup() )->init();
 new Newbees\classes\Menus();
 new \Newbees\classes\Widgets();
+new \Newbees\acf\ACFCore();

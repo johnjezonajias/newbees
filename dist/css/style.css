@@ -1519,6 +1519,18 @@ select {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
+.hover\:opacity-80:hover {
+  opacity: 0.8;
+}
+
+.hover\:opacity-65:hover {
+  opacity: 0.65;
+}
+
+.hover\:opacity-85:hover {
+  opacity: 0.85;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
