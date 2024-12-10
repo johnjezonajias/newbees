@@ -19,11 +19,11 @@ module.exports = {
     extend: {
       fontSize: {
         'h1': ['1.875rem', { lineHeight: '1.25', fontWeight: '600' }],
-        'h2': ['1.75rem', { lineHeight: '1.25', fontWeight: '600' }],
-        'h3': ['1.625rem', { lineHeight: '1.35', fontWeight: '600' }],
-        'h4': ['1.5rem', { lineHeight: '1.5', fontWeight: '600' }],
-        'h5': ['1.375rem', { lineHeight: '1.5', fontWeight: '600' }],
-        'h6': ['1.25rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'h2': ['1.625rem', { lineHeight: '1.25', fontWeight: '600' }],
+        'h3': ['1.5rem', { lineHeight: '1.35', fontWeight: '600' }],
+        'h4': ['1.375rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'h5': ['1.25rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'h6': ['1.125rem', { lineHeight: '1.5', fontWeight: '600' }],
       },
     }
   },
